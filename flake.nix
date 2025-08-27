@@ -30,4 +30,13 @@
         ];
       };
     });
+
+  templates = {
+    default = {};
+
+    frontend-typescript-bun-svelte = {
+      path = ./frontend/typescript/bun-svelte;
+      description = "typescript-bun-svelte template";
+    };
+  };
 }
