@@ -29,7 +29,9 @@
         packages = with pkgs; [
         ];
       };
-
+    })
+  //
+    {
       templates = rec {
         default = generic;
 
@@ -43,5 +45,5 @@
           description = "typescript-bun-svelte template";
         };
       };
-    });
+    };
 }
