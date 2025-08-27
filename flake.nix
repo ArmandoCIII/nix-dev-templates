@@ -29,19 +29,19 @@
         packages = with pkgs; [
         ];
       };
+
+      templates = rec {
+        default = generic;
+
+        generic = {
+          path = ./generic;
+          description = "generic template";
+        };
+
+        frontend-typescript-bun-svelte = {
+          path = ./frontend/typescript/bun-svelte;
+          description = "typescript-bun-svelte template";
+        };
+      };
     });
-
-  templates = rec {
-    default = generic;
-
-    generic = {
-      path = ./generic;
-      description = "generic template";
-    };
-
-    frontend-typescript-bun-svelte = {
-      path = ./frontend/typescript/bun-svelte;
-      description = "typescript-bun-svelte template";
-    };
-  };
 }
