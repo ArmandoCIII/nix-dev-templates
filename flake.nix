@@ -44,6 +44,11 @@
           path = ./frontend/typescript/bun-svelte;
           description = "typescript-bun-svelte template";
         };
+
+        backend-nix-anywhere-disko = {
+          path = ./backend/nix/anywhere-disko;
+          description = "A nixos-anywhere with disko tools added template";
+        };
       };
     };
 }
