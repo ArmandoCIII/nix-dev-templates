@@ -1,0 +1,21 @@
+site_name: mysite
+site_url: https://mydomain.org/mysite
+theme:
+  name: material
+  logo: assets/logo.png
+  palette:
+    # TODO: add system specific?
+    - scheme: slate
+      primary: black
+      accent: blue 
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    - scheme: default
+      primary: white 
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+

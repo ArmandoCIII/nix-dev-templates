@@ -1,0 +1,13 @@
+# Ignore build outputs from performing a nix-build or `nix build` command
+result
+result-*
+
+# Zig
+.zig-cache/
+zig-out/
+*.o
+
+# Ignore automatically generated direnv output
+*.direnv
+# Dev Env
+*.env
