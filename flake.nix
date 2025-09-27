@@ -45,11 +45,9 @@
           description = "typescript-bun-svelte template";
         };
         
-        zig = {
-          generic = {
-            path = ./zig/generic;
-            description = "generic zig template";
-          };
+        zig-generic = {
+          path = ./zig/generic;
+          description = "generic zig template";
         };
       };
     };
