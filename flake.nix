@@ -44,6 +44,11 @@
           path = ./frontend/typescript/bun-svelte;
           description = "typescript-bun-svelte template";
         };
+
+        fullstack-python-typescript = {
+          path = ./fullstack/python-typescript;
+          description = "fullstack applications built on python and typescript";
+        };
       };
     };
 }
