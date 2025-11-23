@@ -40,6 +40,11 @@
           description = "generic template";
         };
 
+        containers-docker = {
+          path = ./containers/docker;
+          description = "Template to allow for docker containers being built by nixos";
+        };
+
         frontend-typescript-bun-svelte = {
           path = ./frontend/typescript/bun-svelte;
           description = "typescript-bun-svelte template";
