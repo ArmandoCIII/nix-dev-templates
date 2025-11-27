@@ -11,7 +11,7 @@
     self.submodules = true;
   };
 
-  outputs = inputs@{
+  outputs = inputs @ {
     self,
     nixpkgs,
     flake-utils,
@@ -21,8 +21,8 @@
   in
     flake-utils.lib.eachSystem systems (system: let
       pkgs = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
+        inherit system;
+        config.allowUnfree = true;
       };
       # sources = import ./npins;
     in {

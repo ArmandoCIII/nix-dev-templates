@@ -1,7 +1,7 @@
 {
   description = "A very basic flake";
 
-  outputs = inputs@{
+  outputs = inputs @ {
     self,
     nixpkgs,
     ...
@@ -10,8 +10,8 @@
   in
     inputs.flake-utils.lib.eachSystem systems (system: let
       pkgs = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
+        inherit system;
+        config.allowUnfree = true;
       };
       # sources = import ./npins;
     in {
@@ -19,10 +19,10 @@
 
       devShells.default = pkgs.mkShell {
         packages = with pkgs; [
-            bun
-            typescript
-            tailwindcss
-            mkdocs
+          bun
+          typescript
+          tailwindcss
+          mkdocs
         ];
       };
     });
@@ -34,15 +34,15 @@
       url = "github:numtide/flake-utils";
     };
 
-/*
-    The following will be further investigated to determine if it is 
+    /*
+    The following will be further investigated to determine if it is
     reliable and safe and worth it.
 
     bun2nix = {
       url = "github:baileyluTCD/bun2nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-*/
+    */
 
     # self.submodules = true;
   };

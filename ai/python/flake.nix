@@ -17,15 +17,14 @@
       url = "github:pyproject-nix/build-system-pkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     uv2nix = {
       url = "github:pyproject-nix/uv2nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
-  outputs = inputs@{
+  outputs = inputs @ {
     self,
     nixpkgs,
     flake-utils,
@@ -47,7 +46,7 @@
       };
 
       # Load the uv2nix workspace
-      workspace = inputs.uv2nix.lib.workspace.loadWorkspace { workspaceRoot = ./.; };
+      workspace = inputs.uv2nix.lib.workspace.loadWorkspace {workspaceRoot = ./.;};
 
       # Create overlays for dependencies and build systems
       overlay = workspace.mkPyprojectOverlay {
@@ -63,12 +62,11 @@
 
       # Build the virtual environment
       virtualenv = pythonSet.mkVirtualEnv "dev-env" workspace.deps.default;
-
     in {
       formatter = pkgs.alejandra;
 
       devShells.default = pkgs.mkShell {
-        packages = [ virtualenv pkgs.uv ];
+        packages = [virtualenv pkgs.uv];
         env = {
           UV_NO_SYNC = "1";
           UV_PYTHON = pythonSet.python.interpreter;

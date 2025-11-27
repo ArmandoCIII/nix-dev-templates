@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = inputs@{
+  outputs = inputs @ {
     self,
     nixpkgs,
     ...
@@ -18,8 +18,8 @@
   in
     inputs.flake-utils.lib.eachSystem systems (system: let
       pkgs = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
+        inherit system;
+        config.allowUnfree = true;
       };
       # sources = import ./npins;
     in {
@@ -30,8 +30,7 @@
         ];
       };
     })
-  //
-    {
+    // {
       templates = rec {
         default = generic;
 
@@ -49,10 +48,14 @@
           path = ./fullstack/python-typescript;
           description = "fullstack applications built on python and typescript";
         };
+
         ## AI ##
         python-llm = {
           path = ./ai/python;
           description = "this template is intended to create AI applications (such mcp) with python";
+        };
+
+        ## Docs ##
         docs-mkdocs-material = {
           path = ./docs/mkdocs-material;
           description = "mkdocs-material template";
