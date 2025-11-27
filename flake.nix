@@ -49,12 +49,13 @@
           path = ./fullstack/python-typescript;
           description = "fullstack applications built on python and typescript";
         };
-
-
         ## AI ##
         python-llm = {
           path = ./ai/python;
           description = "this template is intended to create AI applications (such mcp) with python";
+        docs-mkdocs-material = {
+          path = ./docs/mkdocs-material;
+          description = "mkdocs-material template";
         };
       };
     };
