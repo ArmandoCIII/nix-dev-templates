@@ -57,7 +57,7 @@
 
         ## Docs ##
         docs-mkdocs-material = {
-          path = ./docs/mkdocs-material;
+          path = ./documentation/mkdocs-material;
           description = "mkdocs-material template";
         };
       };
