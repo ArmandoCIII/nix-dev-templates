@@ -2,7 +2,7 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/release-25.11";
 
     flake-utils = {
       url = "github:numtide/flake-utils";
@@ -25,10 +25,7 @@
     zon2nix = {
       url = "github:jcollie/zon2nix?rev=dc78177e2ad28d5a407c9e783ee781bd559d7dd5";
       inputs = {
-        # Don't override nixpkgs until Zig 0.15 is available in the Nix branch
-        # we are using for "normal" builds.
-        #
-        # nixpkgs.follows = "nixpkgs";
+        nixpkgs.follows = "nixpkgs";
       };
     }; 
   };
@@ -37,6 +34,7 @@
     self,
     nixpkgs,
     flake-utils,
+    zon2nix,
     ...
   } @ inputs:   
       flake-utils.lib.eachDefaultSystem (system: let
@@ -52,6 +50,7 @@
       devShells.default = pkgs.mkShell {
         packages = with pkgs; [
           (zig)
+          (zon2nix.packages.${system}.zon2nix)
           # zls TODO: best to build from branch same as zig overlay
           mkdocs
         ];
