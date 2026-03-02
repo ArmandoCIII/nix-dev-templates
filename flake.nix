@@ -59,6 +59,7 @@
         docs-mkdocs-material = {
           path = ./documentation/mkdocs-material;
           description = "mkdocs-material template";
+        };
         
         zig-generic = {
           path = ./zig/generic;
