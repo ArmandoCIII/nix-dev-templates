@@ -54,10 +54,20 @@
           description = "fullstack applications built on python and typescript";
         };
 
+        backend-python = {
+          path = ./backend/python;
+          description = "backend applications built on python";
+        };
+
         ## AI ##
         python-llm = {
           path = ./ai/python;
           description = "this template is intended to create AI applications (such mcp) with python";
+        };
+
+        coding-agent = {
+          path = ./ai/coding-agent;
+          description = "Basic files to use alongside armandociii/coding-agent";
         };
 
         ## Docs ##
