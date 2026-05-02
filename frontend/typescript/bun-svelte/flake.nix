@@ -4,6 +4,7 @@
   outputs = inputs @ {
     self,
     nixpkgs,
+    bun2nix,
     ...
   }: let
     systems = ["x86_64-linux"];
@@ -13,7 +14,6 @@
         inherit system;
         config.allowUnfree = true;
       };
-      # sources = import ./npins;
     in {
       formatter = pkgs.alejandra;
 
@@ -28,22 +28,15 @@
     });
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/release-25.11";
 
     flake-utils = {
       url = "github:numtide/flake-utils";
     };
 
-    /*
-    The following will be further investigated to determine if it is
-    reliable and safe and worth it.
-
     bun2nix = {
       url = "github:baileyluTCD/bun2nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    */
-
-    # self.submodules = true;
   };
 }
